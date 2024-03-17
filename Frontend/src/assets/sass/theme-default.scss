@@ -1,0 +1,111 @@
+$font-size-sm: ($font-size-base * .8);
+$font-size-xs: ($font-size-base * .5);
+$font-size-md: ($font-size-base * 1.1428);
+$font-size-10: ($font-size-base * .7);
+$font-size-12: ($font-size-base * .85);
+$font-size-14: ($font-size-base);
+$font-size-15: ($font-size-base * 1.0714);
+$font-size-21: ($font-size-base * 1.5);
+$font-size-18: ($font-size-base * 1.2857);
+
+body {
+    font-family: IranYekanFa, sans-serif !important;
+    font-weight: 400 !important;
+    text-align: right !important;
+    font-size: 14px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $silver-chalice !important;
+}
+
+*:lang(en) {
+    // font-family: IranYekan !important;
+    direction: ltr;
+    text-align: left;
+}
+
+.lh-4 {
+    line-height: 1.5rem;
+}
+
+.lh-5 {
+    line-height: 2rem;
+}
+
+.text-example {
+    color: $gray-400;
+}
+
+.btn.disabled, 
+.btn:disabled {
+    opacity: .5 !important;
+}
+
+a.text-dark:hover,
+a.text-dark:focus {
+    color: $gray-800 !important;
+}
+
+.text-error {
+    color: $danger
+}
+.text-info {
+    color: $warning;
+}
+pre {
+    font-family: inherit;
+    font-size: inherit;
+    overflow: hidden;
+    white-space: normal;
+}
+
+img.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+.font-size-sm {
+    font-size: $font-size-sm;
+    &.small {
+        font-size: .6rem;
+    }
+}
+
+.font-size-xs {
+    font-size: $font-size-xs;
+}
+.font-size-md {
+    font-size: $font-size-md;
+}
+.font-size-10 {
+    font-size: $font-size-10;
+}
+.font-size-12 {
+    font-size: $font-size-12;
+}
+.font-size-14 {
+    font-size: $font-size-base;
+}
+.font-size-21 {
+    font-size: $font-size-21;
+}
+.font-size-18 {
+    font-size: $font-size-18;
+}
+.font-400 {
+    font-weight: 400;
+}
+.font-500 {
+    font-weight: 500;
+}
+
+.px-12 {
+    padding-right: 12px;
+    padding-left: 12px;
+}
+.hide {
+    display: none !important;
+}

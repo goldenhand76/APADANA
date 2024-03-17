@@ -1,0 +1,116 @@
+.side-bar-wrapper {
+  width: $sidebar-width;
+  right: 0;
+  top: $header-height+24;
+  bottom: 24px;
+  box-shadow: 0 1px 8px rgba(56, 125, 248, 0.25);
+  border-radius: 12px 0 0 12px;
+  //background-image: url("../img/sidebar-pic.png");
+  //background-repeat: no-repeat;
+  //background-size: 200px;
+  //background-position: right bottom;
+
+  .side-bar {
+    .nav {
+      padding: 0 7px 0 10px;
+      position: relative;
+      flex-direction: column;
+    }
+
+    .nav-item {
+
+      &:not(:first-of-type) a {
+        border-top: 1px solid $green-white;
+      }
+
+      a {
+        height: 56px;
+        color: $davy-grey;
+
+        .icon-dashboard {
+          @include icon-dashboard;
+        }
+
+        .icon-history {
+          @include icon-history;
+        }
+
+        .icon-control {
+          @include icon-control;
+        }
+
+        .icon-user {
+          @include icon-user;
+        }
+
+        .icon-setting {
+          @include icon-setting;
+        }
+      }
+      &:hover,
+      &.active {
+        background-color: $zircon;
+        border-radius: 0.5rem;
+        a {
+          color: $primary !important;
+          font-weight: bold;
+          .icon-dashboard {
+            @include icon-dashboard-active;
+          }
+
+          .icon-history {
+            @include icon-history-active;
+          }
+
+          .icon-control {
+            @include icon-control-active;
+          }
+
+          .icon-user {
+            @include icon-user-active;
+          }
+
+          .icon-setting {
+            @include icon-setting-active;
+          }
+        }
+      }
+      &.active {
+        a {
+          border-color: $white;
+        }
+
+        &:nth-child(1) ~ .indicator{
+           top: 10px;
+        }
+        &:nth-child(2) ~ .indicator{
+          top: 66px;
+        }
+        &:nth-child(3) ~ .indicator{
+          top: 122px;
+        }
+        &:nth-child(4) ~ .indicator{
+          top: 178px;
+        }
+        &:nth-child(5) ~ .indicator{
+          top: 234px;
+        }
+      }
+
+      &.active + .nav-item a {
+        border-color: $white;
+      }
+    }
+  }
+}
+
+.indicator {
+  width: 5px;
+  height: 35px;
+  background-color: $primary;
+  position: absolute;
+  right: 0;
+  border-radius: 5px;
+  top: 10px;
+  transition: top 0.5s;
+}

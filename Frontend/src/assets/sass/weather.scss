@@ -1,0 +1,30 @@
+.weather {
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 8px rgba(56, 125, 248, 0.25);
+  display: flex;
+  color: $white;
+  height: 100%;
+
+  .weather-body {
+    border-radius: 16px;
+    background: linear-gradient(180deg, #88D4FF 0%, #4ABEFF 56.67%, #28ABF4 100%);
+    box-shadow: 1px 2px 38px rgba(0, 0, 0, 0.15);
+    flex-grow: 1;
+    padding: 2rem;
+    direction: rtl;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .weather-future {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgba($white,.8);
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

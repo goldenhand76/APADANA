@@ -1,0 +1,25 @@
+.react-alert-container {
+    button {
+        margin-left: unset !important;
+        svg {
+            min-width: 14px !important;
+            width: 14px;
+        }
+    }
+
+    &.alert {
+        background-color: $primary;
+    }
+
+    &.warn {
+        background-color: $warning;
+    }
+
+    &.error {
+        background-color: $danger;
+    }
+
+    &.success {
+        background-color: $success;
+    }
+}

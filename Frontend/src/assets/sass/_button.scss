@@ -1,0 +1,223 @@
+.button {
+    height: 3rem;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+    padding: 0 .2rem;
+    border-radius: 0.75rem;
+    border: none;
+    // border-radius: 0.25rem;
+
+    &.btn-primary-fill {
+        color: $white;
+        background-color: $primary;
+    }
+
+    &.btn-primary-border {
+        border: 1px solid $primary;
+    }
+
+    &.btn-primary-border {
+        border: 1px solid $primary;
+    }
+    &.btn-gray-fill {
+        color: $white;
+        background-color: $santas-gray;
+        line-height: 2.3rem;
+    }
+    
+    &.btn-gray-outline {
+        // background-color: $red;
+        // color: $white;
+        border: 1px solid $gray-300;
+        color: #333;
+        // border-radius: 2em;
+        line-height: 2.3rem;
+    }
+    
+    &.cancel {
+        // background-color: $red;
+        // color: $white;
+        border: 1px solid #ccc;
+        color: #333;
+        // border-radius: 2em;
+        line-height: 2.3rem;
+    }
+    
+    &.retry {
+        border: 1px solid #ccc;
+        color: #333;
+        line-height: 2.3rem;
+    }
+    
+    &.btn-green-fill {
+        background-color: $green;
+        border: 1px solid $green;
+        color: $white;
+        line-height: 2.3rem;
+    }
+
+    &.btn-green-outline {
+        // background-color: $green;
+        color: $green;
+        // border-radius: 2em;
+        line-height: 2.3rem;
+        border: 1px solid $green;
+    }
+
+    &.btn-primary-outline {
+        color: $primary;
+        line-height: 2.3rem;
+        background: transparent;
+    }
+
+    &.btn-secondary-outline {
+        color: $secondary;
+        line-height: 2.3rem;
+        border: 1px solid $secondary;
+    }
+
+    &.btn-secondary-fill {
+        background-color: $secondary;
+        border: 1px solid $secondary;
+        color: $white;
+        line-height: 2.3rem;
+    }
+
+    &.btn-danger-fill {
+        background-color: $danger;
+        border: 1px solid $danger;
+        color: $white;
+        line-height: 2.3rem;
+    }
+
+    &.disabled {
+        opacity: .5 !important;
+        pointer-events: none;
+    }
+
+    &.btn-link {
+        text-align: right;
+    }
+
+    &.btn-shadow {
+        box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.16);
+    }
+
+    &.btn-48 {
+        width: 48px;;
+    }
+}
+
+a.button {
+    &.btn-primary-fill {
+        max-width: max-content;
+    }
+}
+.button-print {
+
+}
+
+.button-download-pdf {
+    
+}
+
+.btn-disable {
+    // background-color: gray !important;
+    cursor: auto;
+}
+
+.btn-loading {
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #999;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 30%;
+    right: .5rem;
+    animation: spin 1.5s linear infinite;
+    -webkit-animation: spin 1.5s linear infinite; /* Safari */
+}
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@include media-breakpoint-down(sm) {
+    .button {
+
+        &.btn-primary-fill {
+            // border-radius: 0;
+            //margin-right: 0 !important;
+        }
+        &.bottom-left {
+            bottom: 1rem;
+            left: 0;
+        }
+        &.no {
+            // border-radius: 0;
+            width: 50%;
+            margin-right: 0 !important;
+        }
+    
+        &.btn-gray-outline {
+            // border-radius: 0;
+            width: 50%;
+            margin-right: 0 !important;
+        }
+    
+        &.retry {
+            // border-radius: 0;
+            width: 50%;
+            line-height: 2.3rem;
+        }
+    
+        &.btn-green-fill {
+            // border-radius: 0;
+            width: 50%;
+            margin-right: 0 !important;
+        }
+
+        &.btn-green-outline {
+            // border-radius: 0;
+            width: 50%;
+            line-height: 2.3rem;
+        }
+
+        &.btn-primary-outline {
+            line-height: 2.3rem;
+        }
+        
+        &.btn-secondary-outline {
+            width: 50%;
+            line-height: 2.3rem;
+        }
+
+        &.btn-secondary-fill {
+            // border-radius: 0;
+            width: 50%;
+            margin-right: 0 !important;
+        }
+
+        &.btn-danger-fill {
+            // border-radius: 0;
+            width: 50%;
+            margin-right: 0 !important;
+        }
+
+        &.not-full-size {
+            width: 47% !important;
+        }
+
+        &.long-height {
+            line-height: 3.4rem;
+            height: 3.4rem;
+        }
+
+        &.not-rounded {
+            border-radius: unset;
+        }
+    }
+}

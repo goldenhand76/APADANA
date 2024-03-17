@@ -1,0 +1,55 @@
+.overlay-custom-confirm-box {
+  .react-confirm-alert-body {
+    text-align: center;
+    font-family: unset;
+  }
+}
+
+.overlay-custom-confirm-modal {
+  background: rgba(72, 72, 72, 0.69) !important;
+  z-index: 10000 !important;
+
+  .react-confirm-alert {
+    .card {
+      padding: 2rem;
+
+      &.lg-width {
+        min-width: 500px;
+      }
+    }
+  }
+}
+
+.react-confirm-alert-blur {
+  filter: url(#gaussian-blur);
+  filter: blur(0px) !important;
+  -webkit-filter: blur(0px) !important;
+}
+
+@include media-breakpoint-down(sm) {
+  .overlay-custom-confirm-box {
+    .react-confirm-alert-body {
+      width: 340px;
+    }
+  }
+  .react-confirm-alert-blur {
+    filter: unset !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .react-confirm-alert-overlay {
+    align-items: end !important;
+    padding: 1rem;
+
+    .react-confirm-alert {
+      width: 100%;
+
+      .card {
+        &.lg-width {
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

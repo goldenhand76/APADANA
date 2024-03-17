@@ -1,0 +1,62 @@
+.bottom-navigation {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+
+    .nav-item {
+        list-style: none;
+       
+    }
+
+
+    .sub-active {
+        .icon-room-type {
+            @include icon-room-type-purple;
+        }
+
+        .icon-dashboard {
+            @include icon-dashboard-purple;
+        }
+
+        .icon-pin {
+            @include icon-pin-purple;
+        }
+
+        .icon-speech {
+            @include icon-speech-purple;
+        }
+
+        .icon-user-account {
+            @include icon-user-account-purple;
+        }
+
+        .icon-pricing {
+            @include icon-pricing-purple;
+        }
+    }
+
+    .bottom-navigation-submenu {
+        display: none;
+        position: fixed;
+        width: 100%;
+        // height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 54px;
+        background-color: rgba(0,0,0, .16);
+
+        &.show {
+            display: block;
+        }
+
+        .submenu-items {
+            background: $white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+}

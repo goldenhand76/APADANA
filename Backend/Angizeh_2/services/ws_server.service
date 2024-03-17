@@ -1,0 +1,13 @@
+[Unit]
+Description=websocket server
+Requires=platform.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/Angizeh_2
+ExecStart=/var/www/Angizeh_2/venv/bin/daphne -p 8001 --access-log /var/log/ws_server/access.log Angizeh_2.asgi:application
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+from(bucket: "mqtt.angizehco.com")
+  |> range(start: -1d)
+  |> filter(fn: (r) => r["_measurement"] == "Temperature")
+  |> aggregateWindow(every: 1h, fn: mean, createEmpty: false)
+  |> yield(name: "mean")
+
+from(bucket: "mqtt.angizehco.com")
+  |> range(start: -1d)
+  |> filter(fn: (r) => r["_measurement"] == "Temperature")
+  |> aggregateWindow(every: 1h, fn: max, createEmpty: false)
+  |> yield(name: "max")
+
+from(bucket: "mqtt.angizehco.com")
+  |> range(start: -1d)
+  |> filter(fn: (r) => r["_measurement"] == "Temperature")
+  |> aggregateWindow(every: 1h, fn: min, createEmpty: false)
+  |> yield(name: "min")

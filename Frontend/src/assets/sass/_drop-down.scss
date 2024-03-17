@@ -1,0 +1,24 @@
+.dropdown {
+    .dropdown-menu{
+        position: absolute;
+        top: 100%;
+        left: .2rem;
+        // left: unset;
+        // float: right;
+        text-align: right;
+    }
+
+    .btn-white {
+        background-color: $white;
+        color: $primary;
+        font-size: .7rem;
+    }
+
+    .btn-white:after {
+        margin-right: .3rem;
+    }
+
+    .btn-white:focus {
+        box-shadow: unset;
+    }
+}

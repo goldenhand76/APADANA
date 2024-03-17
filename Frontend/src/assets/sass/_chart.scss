@@ -1,0 +1,12 @@
+.highcharts-title {
+    font-family: IranYekanFa !important;
+}
+.chart-title {
+    li:not(:first-child) {
+        margin-top: 0.5rem
+    }
+    li::marker {
+        width: 8px;
+        height: 8px;
+    }
+}

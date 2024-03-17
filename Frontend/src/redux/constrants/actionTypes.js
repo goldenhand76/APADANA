@@ -1,0 +1,16 @@
+export const APP_LOAD = 'APP_LOAD';
+export const REDIRECT = 'REDIRECT';
+export const PROFILE_PAGE_LOADED = 'PROFILE_PAGE_LOADED';
+export const ROUTE_CHANGED = 'ROUTE_CHANGED';
+export const MESSAGES_ADDED = 'MESSAGES_ADDED';
+export const MESSAGES_CLEAR = 'MESSAGES_CLEAR';
+export const GET_TILES = 'GET_TILES';
+export const ADD_HEADER_ACTION = 'ADD_HEADER_ACTION';
+export const SET_TILES_DATA = 'SET_TILES_DATA';
+export const SET_TILE_DATA = 'SET_TILE_DATA';
+export const ADD_TILE = 'ADD_TILE';
+export const REMOVE_TILE = 'REMOVE_TILE';
+export const REMOVE_HEADER_ACTION = 'REMOVE_HEADER_ACTION';
+export const SET_GRAPH_DATA = 'SET_GRAPH_DATA';
+export const RESET_GRAPH_DATA = 'RESET_GRAPH_DATA';
+export const UPDATE_GRAPH_DATA = 'UPDATE_GRAPH_DATA';

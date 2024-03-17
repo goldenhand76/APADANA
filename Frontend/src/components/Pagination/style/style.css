@@ -1,0 +1,19 @@
+.pagination-container {
+}
+
+.pagination-container .pagination .page-item-arrow.page-item .page-link {
+    background-color: unset;
+}
+
+.pagination-container .pagination .page-item .page-link:hover {
+    /* background-color: unset; */
+    color: white;
+}
+
+.pagination-container .pagination-row {
+    cursor: pointer;
+}
+
+.pagination-container .pagination .page-item-arrow.page-item .page-link:hover {
+    background-color: unset;
+}

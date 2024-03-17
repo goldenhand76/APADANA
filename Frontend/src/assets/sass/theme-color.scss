@@ -1,0 +1,77 @@
+$indigo: #283972;
+$rock-blue: #9EA6C0;
+$cadet-grey: #939CB8;
+$pale-sky-blue: #D2EFFF;
+$polo-blue: #93ABD3;
+$zircon: #F4F6FC;
+$pattens-blue: #E6F2FF;
+$school-bus-yellow: #EBA303;
+$sunset-orange: #ff5c5c;
+
+//chart
+$vibrant-green: #19D228;
+$sun-yellow: #F5E522;
+$pumpkin-orange: #FB7116;
+$neon-blue: #23D7FF;
+$iceberg: #E0F1F8;
+
+// font
+$orange: #FF7E00;
+$red: #E61F10;
+$star-dust: #9E9E9E;
+
+$davy-grey: #585858;
+$oslo-grey: #8A8A8A;
+$grey-goose: #D2D2D2;
+$grey-cloud: #b7b7b7;
+$nobel: #b2b2b2;
+
+
+// line
+$green-white: #EAEAEA;
+$silver-chalice: #AEAEAE;
+
+$green: #00A860;
+$dark-blue: #035C98;
+$havelock-blue: #2694E1;
+$cyan: #00EBFF;
+$scooter: #00D3F4;
+$cerulean: #02B9E3;
+$curious-blue: #0390CD;
+
+$black-cow: #484848;
+
+$DarkMintGreen: #73A6D8;
+
+$indigo: #283972;
+$rock-blue: #9EA6C0;
+$santas-gray: #939CB8;
+$polo-blue: #93ABD3;
+$dark: #212529;
+$light-grey: #dadada;
+
+$dark-red: #D92A05;
+$yellow-green: #A9CB6C;
+
+$white: #fff;
+$gray-500: #AEAEAE;
+$gray-700: #585858;
+$black: #000;
+
+$primary: $indigo;
+$secondary: $santas-gray;
+$success: $yellow-green;
+$warning: $orange;
+$danger: $red;
+
+$muted: $silver-chalice;
+$border: $silver-chalice;
+
+
+$theme-colors: (
+        "primary": $primary,
+        "success": $success,
+        "secondary": $secondary,
+        "danger": $danger,
+        "text": $dark
+);

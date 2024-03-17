@@ -1,0 +1,46 @@
+{
+  "short_name": "Viranique",
+  "name": "Viranique",
+  "icons": [
+    {
+      "src": "./images/72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./images/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "theme_color": "#d2d2d2",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/"
+}

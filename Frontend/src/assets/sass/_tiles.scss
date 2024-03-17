@@ -1,0 +1,110 @@
+.react-grid-layout {
+  direction: ltr;
+
+  .tile-item {
+    box-shadow: 0px 1px 8px rgba(56, 125, 248, 0.25);
+    border-radius: 12px;
+
+    &.tile-item-medium {
+      height: 160px;
+    }
+
+    &.tile-item-small {
+      height: 160px;
+    }
+
+    &.tile-item-large {
+      height: 330px;
+    }
+
+    &.tile-bg-white {
+      background-color: $white;
+    }
+
+    &.tile-bg-grey {
+      background-color: $green-white;
+    }
+  }
+
+  .tile-card {
+    direction: rtl;
+
+    .tile-header {
+      .title-text {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1.1rem;
+      }
+
+      .disabled {
+        pointer-events: none;
+      }
+    }
+
+    .tile-dropdown {
+      // display: none;
+      width: 137px;
+      left: 1.8rem;
+      top: 0.75rem;
+      right: unset;
+      height: 0;
+      opacity: 0;
+      border-radius: 5px;
+      box-shadow: 0px 1px 18px rgba(56, 125, 248, 0.26);
+      transition: all .6s ease;
+
+      &.selected {
+        // display: block;
+        height: 75px;
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+      }
+
+      .tile-dropdown-item {
+        cursor: pointer;
+      }
+    }
+
+    .chart-holder {
+      direction: ltr;
+      height: 110px;
+      font-size: 11px;
+
+      &.graph {
+        height: 190px;
+
+        canvas:nth-child(1) {
+          left: -22px !important;
+        }
+      }
+
+      .number-gauge-humidity {
+        position: absolute;
+        top: 71%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      canvas:nth-child(2) {
+        display: none;
+      }
+      canvas:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+}
+
+.add-tile {
+  background: $pattens-blue;
+  box-shadow: unset;
+  background-image: repeating-linear-gradient(to right, $primary 0%, $primary 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to right, $primary 0%, $primary 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $primary 0%, $primary 50%, transparent 50%, transparent 100%), repeating-linear-gradient(to bottom, $primary 0%, $primary 50%, transparent 50%, transparent 100%);
+  background-position: left top, left bottom, left top, right top;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-size: 20px 2px, 20px 2px, 2px 20px, 2px 20px;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+}

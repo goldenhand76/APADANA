@@ -1,0 +1,94 @@
+version: '3.8'
+
+services:
+
+  broker:
+    image: eclipse-mosquitto:2.0
+    container_name: mosquitto
+    volumes:
+      - ./Mosquitto/config/:/mosquitto/config/
+      - ./Mosquitto/log/:/mosquitto/log/
+      - ./Mosquitto/data:/mosquitto/data/
+    ports:
+      - "1883:1883"
+
+  backend:
+    build: ./Backend
+    image: goldenhand/angizeh_2_backend
+    container_name: backend
+    volumes:
+      - static:/usr/src/app/static
+      - media:/usr/src/app/media
+    expose:
+      - 8000
+      - 8001
+    env_file:
+      - ./Backend/Angizeh_2/.env.dev
+    depends_on:
+      - db
+      - influxdb
+      - redis
+
+  db:
+    image: postgres:13.0-alpine
+    container_name: postgresdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - ./Backend/Angizeh_2/.env.dev
+
+  influxdb:
+    image: influxdb:2.1-alpine
+    container_name: influxdb
+    env_file:
+      - InfluxDB/influxdb2.env
+    volumes:
+      # Mount for influxdb data directory and configuration
+      - influxdbv2:/var/lib/influxdb2:rw
+    ports:
+      - "8086:8086"
+
+  telegraf:
+    image: telegraf:1.22-alpine
+    container_name: telegraf
+    depends_on:
+      - influxdb
+      - broker
+    volumes:
+      # Mount for telegraf config
+      - ./Telegraf/mytelegraf.conf:/etc/telegraf/telegraf.conf:ro
+    env_file:
+      - InfluxDB/influxdb2.env
+
+  frontend:
+    build: ./Frontend
+    image: goldenhand/angizeh_2_frontend
+    container_name: frontend
+    volumes:
+      - static:/usr/src/app/static
+      - ./Frontend/nginx:/etc/nginx/conf.d
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    env_file:
+      - Frontend/.env
+
+  redis:
+    build: redis
+    image: goldenhand/redis
+    container_name: redis
+    ports:
+      - 6379:6379
+
+  memcached:
+    image: memcached
+    container_name: memcached
+    ports:
+      - 11211:11211
+
+volumes:
+  postgres_data:
+  influxdbv2:
+  static:
+  media:

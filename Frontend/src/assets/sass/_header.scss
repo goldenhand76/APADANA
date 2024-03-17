@@ -1,0 +1,74 @@
+.header-box {
+    height: $header-height;
+    box-shadow: 0 1px 8px rgba(56, 125, 248, 0.25);
+    border-radius: 12px 0 0 12px;
+    top: 0.5rem;
+    .header-logo {
+        width: 37px;
+        height: 36px;
+    }
+
+    .clock-box {
+        width: 70px;
+    }
+
+    .action-bar {
+        position: absolute;
+        background: #fff;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+    }
+
+
+    .drop-down-rounded {
+        border: 1px solid #F2F2F2;
+        border-radius: 42px;
+    }
+
+    .dropdown-menu {
+        top: 110%;
+        border: unset;
+        box-shadow: 0 1px 18px rgba(56, 125, 248, 0.2);
+        border-radius: .75rem;
+
+        .icon-polygon-dropdown {
+            top: -6px;
+            left: 20px;
+        }
+    }
+    .dropdown-item:hover {
+        background: $white;
+        border-radius: 0.75rem;
+    }
+
+    .header-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+
+    }
+
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border: 1.5px solid #8a8a8a;
+    border-radius: 50%;
+    position: relative;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    .icon-edit-profile {
+        position: absolute;
+        left: -10px;
+        bottom: 0;
+    }
+}

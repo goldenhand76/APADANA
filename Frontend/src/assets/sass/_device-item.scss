@@ -1,0 +1,21 @@
+.device-item {
+    &.item-Motion,
+    &.item-Door {
+        &.item-is-offline {
+            .device-item-content {
+                // background-color: $gray-300 !important;
+            }
+        }
+
+        &.item-is-online {
+            .device-item-content {
+                // background-color: $light-gray-green !important;
+            }
+            &.item-value-true {
+                .device-item-content {
+                    // background-color: $light-gray-red !important;
+                }
+            }
+        }
+    }
+}

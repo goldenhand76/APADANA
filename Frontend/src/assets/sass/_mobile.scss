@@ -1,0 +1,136 @@
+$header-bottomNavigation-height: ($header-height + $bottom-navigation-height);
+
+.is-mobile {
+  .main-wrapper-holder {
+    overflow-y: scroll !important;
+  }
+
+  .main-wrapper {
+    margin-right: 0 !important;
+    min-height: calc(100vh - $header-bottomNavigation-height);
+    padding: 1rem 0;
+    position: relative;
+    bottom: 56px;
+    margin-top: 56px;
+
+    .btn-show-side-bar {
+      display: none;
+    }
+  }
+
+  .bottom-navigation {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    z-index: $zindex-fixed;
+    height: 56px;
+
+    .nav-link {
+
+      color: $dark;
+
+      .icon-dashboard {
+        @include icon-dashboard;
+      }
+
+      .icon-history {
+        @include icon-history;
+      }
+
+      .icon-control {
+        @include icon-control;
+      }
+
+      .icon-user {
+        @include icon-user;
+      }
+
+      .icon-setting {
+        @include icon-setting;
+      }
+
+      &.active {
+
+        color: $primary;
+        font-weight: bold;
+
+        .icon-dashboard {
+          @include icon-dashboard-active;
+        }
+
+        .icon-history {
+          @include icon-history-active;
+        }
+
+        .icon-control {
+          @include icon-control-active;
+        }
+
+        .icon-user {
+          @include icon-user-active;
+        }
+
+        .icon-setting {
+          @include icon-setting-active;
+        }
+      }
+    }
+  }
+
+  .header-box {
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    top: 0;
+  }
+
+  .autoCompeletSelect {
+    box-shadow: 0 2px 6px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    &:not(.is-open) {
+      border: 1px solid $silver-chalice;
+    }
+
+    .select-input-content {
+      border: unset;
+    }
+  }
+
+
+  input.form-control {
+    border-color: $silver-chalice;
+  }
+
+  .control {
+    .control-type {
+      width: 33.333%;
+      text-align: center;
+      padding: 11px 1rem;
+      &:before {
+        bottom: -0.5rem;
+      }
+      &.active:before {
+        left: 14px;
+        right: 14px;
+      }
+    }
+  }
+
+  .settings .container-radio {
+    padding-right: 31px;
+  }
+
+  .settings .container-checkbox {
+    padding-right: 28px;
+  }
+
+  .header-dashboard-tab {
+    top: $header-height + 16px;
+  }
+
+
+  .weather {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,4 @@
+./Backend/venv/*
+./Backend/static/*
+./Frontend/dist/*
+./Frontend/node_modules/*

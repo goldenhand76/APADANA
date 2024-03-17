@@ -1,0 +1,1294 @@
+%icon-keyboard-arrow {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 7"><path fill="%23707070" id="Arrow_Down_Icon" data-name="Arrow Down Icon" d="M.26,1.481,4.879,6,.26,10.519a.854.854,0,0,0,0,1.227.9.9,0,0,0,1.254,0L6.741,6.631a.9.9,0,0,0,0-1.263L1.514.254A.9.9,0,0,0,.26.254a.854.854,0,0,0,0,1.227Z" transform="translate(12) rotate(90)"/></svg>') no-repeat;
+}
+
+@mixin icon-keyboard-arrow-left {
+  @extend %icon-keyboard-arrow;
+  transform: rotate(90deg);
+}
+
+@mixin icon-keyboard-arrow-right {
+  @extend %icon-keyboard-arrow;
+  transform: rotate(-90deg);
+}
+
+.icon {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+}
+
+.icon-close-circle {
+  background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 294.843 294.843" style="enable-background:new 0 0 294.843 294.843;" xml:space="preserve"><g><path d="M147.421,0C66.133,0,0,66.133,0,147.421s66.133,147.421,147.421,147.421c38.287,0,74.567-14.609,102.159-41.136c2.389-2.296,2.464-6.095,0.167-8.483c-2.295-2.388-6.093-2.464-8.483-0.167c-25.345,24.367-58.672,37.786-93.842,37.786C72.75,282.843,12,222.093,12,147.421S72.75,12,147.421,12s135.421,60.75,135.421,135.421c0,16.842-3.052,33.273-9.071,48.835c-1.195,3.091,0.341,6.565,3.432,7.761c3.092,1.193,6.565-0.341,7.761-3.432c6.555-16.949,9.879-34.836,9.879-53.165C294.843,66.133,228.71,0,147.421,0z"/><path d="M167.619,160.134c-2.37-2.319-6.168-2.277-8.485,0.09c-2.318,2.368-2.277,6.167,0.09,8.485l47.236,46.236c1.168,1.143,2.683,1.712,4.197,1.712c1.557,0,3.113-0.603,4.288-1.803c2.318-2.368,2.277-6.167-0.09-8.485L167.619,160.134z"/><path d="M125.178,133.663c1.171,1.171,2.707,1.757,4.243,1.757s3.071-0.586,4.243-1.757c2.343-2.343,2.343-6.142,0-8.485L88.428,79.942c-2.343-2.343-6.143-2.343-8.485,0c-2.343,2.343-2.343,6.142,0,8.485L125.178,133.663z"/><path d="M214.9,79.942c-2.343-2.343-6.143-2.343-8.485,0L79.942,206.415c-2.343,2.343-2.343,6.142,0,8.485c1.171,1.171,2.707,1.757,4.243,1.757s3.071-0.586,4.243-1.757L214.9,88.428C217.243,86.084,217.243,82.286,214.9,79.942z"/></g></svg>') no-repeat;
+}
+
+.icon-lock {
+  background: url('data:image/svg+xml;utf8,<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><g><path d="M419.721,196.465H92.279c-16.414,0-29.767,13.354-29.767,29.767v256c0,16.414,13.354,29.767,29.767,29.767h327.442c16.414,0,29.767-13.354,29.767-29.767v-256C449.488,209.819,436.135,196.465,419.721,196.465z M413.767,476.279H98.233V232.186h315.535V476.279z"/></g><g><path d="M256,0c-80.426,0-145.86,65.971-145.86,147.051v61.321h35.721v-61.321c0-61.386,49.408-111.33,110.14-111.33c60.732,0,110.14,49.944,110.14,111.33v61.321h35.721v-61.321C401.861,65.971,336.432,0,256,0z"/></g><g><path d="M253.023,333.395c-9.865,0-17.86,7.996-17.86,17.86v41.674c0,9.865,7.996,17.86,17.86,17.86s17.86-7.996,17.86-17.86v-41.674C270.884,341.391,262.888,333.395,253.023,333.395z"/></g></svg>') no-repeat;
+}
+
+.icon-keyboard-arrow-right {
+  @include icon-keyboard-arrow-right;
+}
+
+.icon-keyboard-arrow-left {
+  @include icon-keyboard-arrow-left;
+}
+
+
+// icon sizes
+.icon {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  vertical-align: middle;
+}
+
+.icon-10 {
+  width: 10px;
+  height: 10px;
+}
+
+.icon-12 {
+  width: 12px;
+  height: 12px;
+}
+
+.icon-14 {
+  width: 14px;
+  height: 14px;
+}
+
+.icon-16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-18 {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-20 {
+  width: 20px;
+  height: 20px;
+}
+
+.icon-22 {
+  width: 22px;
+  height: 22px;
+}
+
+.icon-24 {
+  width: 24px;
+  height: 24px;
+}
+.icon-24-38 {
+  width: 24px;
+  height: 38px;
+}
+.icon-28 {
+  width: 28px;
+  height: 28px;
+}
+
+.icon-32 {
+  width: 32px;
+  height: 32px;
+}
+
+.icon-40 {
+  width: 40px;
+  height: 40px;
+}
+
+.icon-48 {
+  width: 48px;
+  height: 48px;
+}
+
+.icon-64 {
+  width: 64px;
+  height: 64px;
+}
+
+.icon-96 {
+  width: 96px;
+  height: 96px;
+}
+
+
+.icon-128 {
+  width: 128px;
+  height: 128px;
+}
+
+.icon-256 {
+  width: 256px;
+  height: 256px;
+}
+
+.icon-white {
+  filter: brightness(3.5);
+}
+
+// sidebar icons
+
+@mixin icon-dashboard {
+  background-image: url("../img/icons/icon-Bold-Home.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-history {
+  background-image: url("../img/icons/icon-Bold-History.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-control {
+  background-image: url("../img/icons/Filter.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-user {
+  background-image: url("../img/icons/icon-Bold-Friends.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-setting {
+  background-image: url("../img/icons/Setting.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-dashboard-active {
+  background-image: url("../img/icons/icon-Bold-Home-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-history-active {
+  background-image: url("../img/icons/icon-Bold-History-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-control-active {
+  background-image: url("../img/icons/Filter-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-user-active {
+  background-image: url("../img/icons/icon-Bold-Friends-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin icon-setting-active {
+  background-image: url("../img/icons/Setting-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+// icons
+.icon-user {
+  background-image: url("../img/icons/user.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-user-add {
+  background-image: url("../img/icons/icon-user-add.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-key {
+  background-image: url("../img/icons/key.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-user-type {
+  background-image: url("../img/icons/user-type.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-location {
+  background-image: url("../img/icons/location.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-location-light {
+  background-image: url("../img/icons/icon-location-light.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-phone-circle {
+  background-image: url("../img/icons/icon-phone-circle.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-atsign {
+  background-image: url("../img/icons/icon-atsign.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-arrow-down {
+  background-image: url("../img/icons/arrow-down.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-arrow-up {
+  background-image: url("../img/icons/arrow-down.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.icon-arrow-down-primary {
+  background-image: url("../img/icons/arrow-down-primary.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-arrow-up-primary {
+  background-image: url("../img/icons/arrow-down-primary.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+.icon-profile {
+  background-image: url("../img/icons/profile-circle.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sign-out {
+  background-image: url("../img/icons/icon-sign-out.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-edit-profile {
+  background-image: url("../img/icons/icon-edit-profile.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-notification {
+  background-image: url("../img/icons/notification.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-activity {
+  background-image: url("../img/icons/icon-activity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-actuator {
+  background-image: url("../img/icons/icon-relay.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-organization {
+  background-image: url("../img/icons/icon-config.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sensor {
+  background-image: url("../img/icons/icon-sensor.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-calendar {
+  background-image: url("../img/icons/icon-Bold-Calendar.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-clockTime {
+  background-image: url("../img/icons/icon-Bold-ClockTime.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-arrow-right-light {
+  background-image: url("../img/icons/Arrow_right_light.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-plus {
+  background-image: url("../img/icons/plus.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-plus-primary {
+  background-image: url("../img/icons/icon-plus-primary.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-more-vertical {
+  background-image: url("../img/icons/more-vertical.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-danger {
+  background-image: url("../img/icons/icon-danger.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-temperature {
+  background-image: url("../img/icons/temperature.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-temperature-disable {
+  background-image: url("../img/icons/temperture-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-soil-moisture {
+  background-image: url("../img/icons/icon-soil-moisture.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-soil-temperature {
+  background-image: url("../img/icons/icon-soil-temperature.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-search {
+  background-image: url("../img/icons/icon-search.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-edit {
+  background-image: url("../img/icons/edit.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-delete {
+  background-image: url("../img/icons/Delete.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-move {
+  background-image: url("../img/icons/icon-move.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-click-move {
+  background-image: url("../img/icons/icon-click-move.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-Humidity {
+  background-image: url("../img/icons/humidity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-Humidity-disable {
+  background-image: url("../img/icons/hudimity-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-acidity {
+  background-image: url("../img/icons/icon-acidity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-acidity-disable {
+  background-image: url("../img/icons/icon-acidity-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-soil-acidity {
+  background-image: url("../img/icons/icon-soil-acidity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-nitrogen {
+  background-image: url("../img/icons/icon-nitrogen.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-nitrogen-disable {
+  background-image: url("../img/icons/icon-nitrogen-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-potassium {
+  background-image: url("../img/icons/icon-potassium.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-potassium-disable {
+  background-image: url("../img/icons/icon-potassium-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-phosphorus {
+  background-image: url("../img/icons/icon-phosphorus.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-phosphorus-disable {
+  background-image: url("../img/icons/icon-phosphorus-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-salinity {
+  background-image: url("../img/icons/icon-salinity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-salinity-disable {
+  background-image: url("../img/icons/icon-salinity-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-door-open {
+  background-image: url("../img/icons/icon-door-open.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-door-close {
+  background-image: url("../img/icons/icon-door-close.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-door-disable {
+  background-image: url("../img/icons/icon-door-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sensor-door-off {
+  background-image: url("../img/icons/icon-sensor-door-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sensor-door-on {
+  background-image: url("../img/icons/icon-sensor-door-on.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-sensor-door-disable {
+  background-image: url("../img/icons/icon-sensor-door-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sensor-digital-on {
+  background-image: url("../img/icons/icon-sensor-digital-on.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-sensor-digital-off {
+  background-image: url("../img/icons/icon-sensor-digital-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-sensor-digital-disable {
+  background-image: url("../img/icons/icon-sensor-digital-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-electricity-emergency {
+  background-image: url("../img/icons/icon-electricity-emergency.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-electricity-natural {
+  background-image: url("../img/icons/icon-electricity-natural.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-electricity-off {
+  background-image: url("../img/icons/icon-electricity-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-light-intensity-off {
+  background-image: url("../img/icons/icon-light-intensity-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-light-intensity {
+  background-image: url("../img/icons/icon-light-intensity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-fan-on {
+  background-image: url("../img/icons/icon-fan-on.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-fan-off {
+  background-image: url("../img/icons/icon-fan-off.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-do {
+  background-image: url("../img/icons/icon-do.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-do-disable {
+  background-image: url("../img/icons/icon-do-disable.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-check-circle-active {
+  background-image: url("../img/icons/icon-check-circle-active.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-check-circle {
+  background-image: url("../img/icons/icon-check-circle.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-moving-tiles {
+  background-image: url("../img/icons/icon-moving-tiles.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-phone {
+  background-image: url("../img/icons/phone.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-phone-light {
+  background-image: url("../img/icons/icon-phone-light.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-email {
+  background-image: url("../img/icons/email.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-eye {
+  background-image: url("../img/icons/icon-eye.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-eye-close {
+  background-image: url("../img/icons/icon-eye-close.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-close-circle-white {
+  background-image: url("../img/icons/icon-close-circle.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-globe {
+  background-image: url("../img/icons/icon-globe.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-filter {
+  background-image: url("../img/icons/icon-filter.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-arrow-right {
+  background-image: url("../img/icons/arrow-right.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-polygon-dropdown {
+  background-image: url("../img/polygon.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-disconnected {
+  background-image: url("../img/icons/icon-disconnected.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-connected {
+  background-image: url("../img/icons/icon-connected.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-close {
+  background-image: url("../img/icons/icon-close.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-danger-grey {
+  background-image: url("../img/icons/icon-danger-grey.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-warning {
+  background-image: url("../img/icons/icon-warning.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-alert-info {
+  background-image: url("../img/icons/alert/icon-warning.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-alert-error {
+  background-image: url("../img/icons/alert/icon-danger.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-alert-success {
+  background-image: url("../img/icons/alert/icon-success.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-windy {
+  background-image: url("../img/icons/icon-windy.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-map {
+  background-image: url("../img/icons/icon-map.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-weather-humidity {
+  background-image: url("../img/icons/icon-weather-humidity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1000 {
+  background-image: url("../img/icons/weather/night/1000.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1003 {
+  background-image: url("../img/icons/weather/night/1003.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1006 {
+  background-image: url("../img/icons/weather/night/1006.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1009 {
+  background-image: url("../img/icons/weather/night/1009.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1030 {
+  background-image: url("../img/icons/weather/night/1030.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1063 {
+  background-image: url("../img/icons/weather/night/1063.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1066 {
+  background-image: url("../img/icons/weather/night/1066.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1069 {
+  background-image: url("../img/icons/weather/night/1069.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1072 {
+  background-image: url("../img/icons/weather/night/1072.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1087 {
+  background-image: url("../img/icons/weather/night/1087.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1114 {
+  background-image: url("../img/icons/weather/night/1114.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1117 {
+  background-image: url("../img/icons/weather/night/1117.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1135 {
+  background-image: url("../img/icons/weather/night/1135.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1147 {
+  background-image: url("../img/icons/weather/night/1147.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1150 {
+  background-image: url("../img/icons/weather/night/1150.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1153 {
+  background-image: url("../img/icons/weather/night/1153.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1168 {
+  background-image: url("../img/icons/weather/night/1168.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1171 {
+  background-image: url("../img/icons/weather/night/1171.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1180 {
+  background-image: url("../img/icons/weather/night/1180.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1183 {
+  background-image: url("../img/icons/weather/night/1183.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1186 {
+  background-image: url("../img/icons/weather/night/1186.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1189 {
+  background-image: url("../img/icons/weather/night/1189.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1192 {
+  background-image: url("../img/icons/weather/night/1192.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1195 {
+  background-image: url("../img/icons/weather/night/1195.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1198 {
+  background-image: url("../img/icons/weather/night/1198.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1201 {
+  background-image: url("../img/icons/weather/night/1201.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1204 {
+  background-image: url("../img/icons/weather/night/1204.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1207 {
+  background-image: url("../img/icons/weather/night/1207.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1210 {
+  background-image: url("../img/icons/weather/night/1210.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1213 {
+  background-image: url("../img/icons/weather/night/1213.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1216 {
+  background-image: url("../img/icons/weather/night/1216.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1219 {
+  background-image: url("../img/icons/weather/night/1219.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1222 {
+  background-image: url("../img/icons/weather/night/1222.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1225 {
+  background-image: url("../img/icons/weather/night/1225.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1237 {
+  background-image: url("../img/icons/weather/night/1237.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1240 {
+  background-image: url("../img/icons/weather/night/1240.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1243 {
+  background-image: url("../img/icons/weather/night/1243.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1246 {
+  background-image: url("../img/icons/weather/night/1246.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1249 {
+  background-image: url("../img/icons/weather/night/1249.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1252 {
+  background-image: url("../img/icons/weather/night/1252.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1255 {
+  background-image: url("../img/icons/weather/night/1255.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1258 {
+  background-image: url("../img/icons/weather/night/1258.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1261 {
+  background-image: url("../img/icons/weather/night/1261.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1264 {
+  background-image: url("../img/icons/weather/night/1264.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1273 {
+  background-image: url("../img/icons/weather/night/1273.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-night-weather-1276 {
+  background-image: url("../img/icons/weather/night/1276.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-night-weather-1279 {
+  background-image: url("../img/icons/weather/night/1279.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-night-weather-1282 {
+  background-image: url("../img/icons/weather/night/1282.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+.icon-day-weather-1000 {
+  background-image: url("../img/icons/weather/day/1000.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1003 {
+  background-image: url("../img/icons/weather/day/1003.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1006 {
+  background-image: url("../img/icons/weather/day/1006.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1009 {
+  background-image: url("../img/icons/weather/day/1009.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1030 {
+  background-image: url("../img/icons/weather/day/1030.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1063 {
+  background-image: url("../img/icons/weather/day/1063.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1066 {
+  background-image: url("../img/icons/weather/day/1066.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1069 {
+  background-image: url("../img/icons/weather/day/1069.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1072 {
+  background-image: url("../img/icons/weather/day/1072.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1087 {
+  background-image: url("../img/icons/weather/day/1087.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1114 {
+  background-image: url("../img/icons/weather/day/1114.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1117 {
+  background-image: url("../img/icons/weather/day/1117.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1135 {
+  background-image: url("../img/icons/weather/day/1135.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1147 {
+  background-image: url("../img/icons/weather/day/1147.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1150 {
+  background-image: url("../img/icons/weather/day/1150.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1153 {
+  background-image: url("../img/icons/weather/day/1153.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1168 {
+  background-image: url("../img/icons/weather/day/1168.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1171 {
+  background-image: url("../img/icons/weather/day/1171.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1180 {
+  background-image: url("../img/icons/weather/day/1180.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1183 {
+  background-image: url("../img/icons/weather/day/1183.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1186 {
+  background-image: url("../img/icons/weather/day/1186.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1189 {
+  background-image: url("../img/icons/weather/day/1189.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1192 {
+  background-image: url("../img/icons/weather/day/1192.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1195 {
+  background-image: url("../img/icons/weather/day/1195.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1198 {
+  background-image: url("../img/icons/weather/day/1198.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1201 {
+  background-image: url("../img/icons/weather/day/1201.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1204 {
+  background-image: url("../img/icons/weather/day/1204.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1207 {
+  background-image: url("../img/icons/weather/day/1207.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1210 {
+  background-image: url("../img/icons/weather/day/1210.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1213 {
+  background-image: url("../img/icons/weather/day/1213.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1216 {
+  background-image: url("../img/icons/weather/day/1216.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1219 {
+  background-image: url("../img/icons/weather/day/1219.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1222 {
+  background-image: url("../img/icons/weather/day/1222.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1225 {
+  background-image: url("../img/icons/weather/day/1225.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1237 {
+  background-image: url("../img/icons/weather/day/1237.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1240 {
+  background-image: url("../img/icons/weather/day/1240.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1243 {
+  background-image: url("../img/icons/weather/day/1243.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1246 {
+  background-image: url("../img/icons/weather/day/1246.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1249 {
+  background-image: url("../img/icons/weather/day/1249.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1252 {
+  background-image: url("../img/icons/weather/day/1252.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1255 {
+  background-image: url("../img/icons/weather/day/1255.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1258 {
+  background-image: url("../img/icons/weather/day/1258.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1261 {
+  background-image: url("../img/icons/weather/day/1261.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1264 {
+  background-image: url("../img/icons/weather/day/1264.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1273 {
+  background-image: url("../img/icons/weather/day/1273.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-day-weather-1276 {
+  background-image: url("../img/icons/weather/day/1276.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.icon-day-weather-1279 {
+  background-image: url("../img/icons/weather/day/1279.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-day-weather-1282 {
+  background-image: url("../img/icons/weather/day/1282.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+

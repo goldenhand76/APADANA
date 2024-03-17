@@ -1,0 +1,131 @@
+.login-parent {
+  box-shadow: 0 1px 8px rgba(56, 125, 248, 0.25);
+  background-color: $white;
+  border-radius: 8px;
+  height: calc(100vh - 48px);
+  padding: 10vmin;
+  min-height: 490px;
+  position: relative;
+
+  .bg-img {
+    background-image: url('../img/loginImg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    border-radius: 33px;
+    height: 90%;
+    position: relative;
+    padding: 20% 5%;
+
+    .title {
+      font-weight: 800;
+    }
+
+    .line {
+      width: 70%;
+      margin-bottom: 10%;
+      border-top-color: $white;
+      margin-right: 0;
+    }
+
+    &::after {
+      content: '';
+      background: url('../img/GroupBottom.png') no-repeat;
+      background-size: 15%;
+      position: absolute;
+      top: 94%;
+      left: 75%;
+      width: 100%;
+      height: 184px;
+      display: block;
+    }
+  }
+
+  .bg-left {
+    background-image: url('../img/GroupLeft.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 35 50;
+  }
+
+  .login-form {
+    box-shadow: 0 1px 8px rgba(56, 125, 248, 0.2);
+    border-radius: 10px;
+    background-color: $white;
+    padding: 2% 4%;
+
+    input {
+      text-align: left;
+      padding-left: 0.75rem;
+      direction: ltr;
+    }
+    input:placeholder-shown {
+      text-align: right;
+      direction: rtl;
+    }
+    .back-to-login {
+      cursor: pointer;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0;
+    }
+
+    img {
+      width: 118px;
+      height: 53px;
+      object-fit: cover;
+    }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      h4 {
+        font-size: 1em;
+        color: $white;
+      }
+    }
+  }
+
+
+  .login-description {
+    display: flex;
+    bottom: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .display-none {
+    display: none;
+  }
+
+  .login-parent {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 7px;
+      width: 100%;
+      border-top-right-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      background: $primary;
+    }
+
+    .login-form {
+      box-shadow: unset;
+      padding: unset;
+    }
+  }
+  .login-parent .login-description {
+    display: none;
+  }
+}

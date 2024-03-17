@@ -1,0 +1,43 @@
+.duration-input-holder {
+    direction: ltr;
+    border-radius: .75rem;
+    height: 48px;
+    width: 90px;
+    border: 1px solid #AEAEAE;;
+
+    &.disabled {
+        background-color: #A4B0BE !important;
+        color: #fff;
+    }
+    input {
+        outline: 0;
+        border: 0;
+        width: 22px;
+    }
+
+    &.time-duration-large {
+        width: 89px;
+        input[name="hours"] {
+            width: 33px;
+        }
+    }
+    .icon-time {
+        background-image: url('icon-time.svg');
+        background-repeat: no-repeat;
+        cursor: default !important;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+        &:disabled {
+            background-color: #A4B0BE !important;
+            color: #fff;
+        }
+    }
+}

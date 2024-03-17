@@ -1,0 +1,13 @@
+[Unit]
+Description=mqtt consumer
+Requires=platform.socket
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=/var/www/Angizeh_2
+ExecStart=/var/www/Angizeh_2/venv/bin/mqttasgi -H mqtt.angizehco.com -p 1883 -U leo -P Goldenhand76 Angizeh_2.asgi:application
+
+[Install]
+WantedBy=multi-user.target
