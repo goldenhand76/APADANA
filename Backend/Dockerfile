@@ -25,12 +25,11 @@ RUN apt-get update && apt-get install -y supervisor
 RUN mkdir -p /var/log/supervisor
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-COPY ./entrypoint.sh .
+COPY ./ ./
 RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh # Delete unnecessery characters [\r$]
 RUN chmod +x /usr/src/app/entrypoint.sh
 
-COPY . .
-
+RUN ls
 ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 # CMD ["gunicorn", "Angizeh_2.wsgi:application", "--bind", "0.0.0.0:8000"]
 CMD ["/usr/bin/supervisord"]
