@@ -4,7 +4,7 @@ FROM node:16-alpine as build
 # https://github.com/jstandish/cached-node-module-build-example/blob/567a8537d6b8c935d9e4dee2267b24f93bcecfa3/Dockerfile
 WORKDIR /tmp
 ADD package.json /tmp/
-RUN npm install -g npm@6.14 --force
+RUN npm install -g npm@8.19.4 --force
 RUN npm config set loglevel verbose
 RUN npm config rm proxy
 RUN npm config rm https-proxy

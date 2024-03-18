@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open --mode development ",
+    "start": "webpack-dev-server --open --mode development",
     "dev": "webpack --env.PUBLIC_URL=/app --config webpack.config.js",
     "build": "webpack --mode production --env.PUBLIC_URL=/ --config webpack.config.js",
     "buildtab": "webpack --mode production --env.PUBLIC_URL=/app --config webpack.config.js"
