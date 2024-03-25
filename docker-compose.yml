@@ -68,7 +68,7 @@ services:
       - static:/usr/src/app/static
       - ./Frontend/nginx:/etc/nginx/conf.d
     ports:
-      - "8080:80"
+      - "8081:80"
     depends_on:
       - backend
     env_file:
@@ -86,6 +86,12 @@ services:
     container_name: memcached
     ports:
       - 11211:11211
+
+  kafka:
+    image: apache/kafka:3.7.0
+    container_name: kafka
+    ports:
+      - 9092:9092
 
 volumes:
   postgres_data:
