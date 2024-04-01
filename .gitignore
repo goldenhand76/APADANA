@@ -3,3 +3,4 @@
 ./Frontend/dist/*
 ./Frontend/node_modules/*
 ./Mosquitto/data/mosquitto.db
+./Backend/.idea/*
