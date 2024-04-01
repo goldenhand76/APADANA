@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: psql-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: psql
+  template:
+    metadata:
+      labels:
+        app: psql
+    spec:
+      containers:
+        - name: psql
+          image: 'postgres:13.0-alpine'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: angizeh_2
+            - name: POSTGRES_USER
+              value: leo
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: psql
+                  key: SA_PASSWORD
+          volumeMounts:
+            - mountPath: /var/lib/psql/data
+              name: psqldb
+      volumes:
+        - name: psqldb
+          persistentVolumeClaim:
+            claimName: psql-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: psql-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: psql
+  ports:
+  - name: psql
+    protocol: TCP
+    port: 5432
+    targetPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: psql-loadbalancer
+spec:
+  type: LoadBalancer
+  selector:
+    app: psql
+  ports:
+  - protocol: TCP
+    port: 5432
+    targetPort: 5432
