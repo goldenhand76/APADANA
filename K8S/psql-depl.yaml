@@ -1,7 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: psql-depl
   name: psql-depl
+  namespace: angizeh-2
 spec:
   replicas: 1
   selector:
@@ -26,7 +29,7 @@ spec:
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: psql
+                  name: psql-secret
                   key: SA_PASSWORD
           volumeMounts:
             - mountPath: /var/lib/psql/data
@@ -40,6 +43,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: psql-clusterip-srv
+  namespace: angizeh-2
 spec:
   type: ClusterIP
   selector:
@@ -54,6 +58,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: psql-loadbalancer
+  namespace: angizeh-2
 spec:
   type: LoadBalancer
   selector:
