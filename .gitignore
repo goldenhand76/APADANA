@@ -4,5 +4,5 @@
 ./Frontend/node_modules/*
 ./Mosquitto/data/mosquitto.db
 ./Backend/.idea/*
-./.idea/*
 /K8S/psql-secret.yaml
+/.idea/
