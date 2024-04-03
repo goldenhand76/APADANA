@@ -1,4 +1,4 @@
-<img src='Images/persian-lotus.png' width='25'>
+<img src='Images/Persian_lotus.png' width='250'>
 
 # APADANA: Empowering Smart Connectivity
 
