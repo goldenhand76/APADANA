@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1c605188-2bc9-44be-9e6d-768672d7cac7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/K8S/psql-depl.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8S/psql-pv.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/K8S/psql-pvc.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8S/kafka.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/K8S/zookeeper.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +39,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1712001375915</updated>
-      <workItem from="1712001377127" duration="4078000" />
+      <workItem from="1712001377127" duration="15437000" />
     </task>
     <servers />
   </component>
