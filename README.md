@@ -1,3 +1,5 @@
+<img src='Images/Persian_lotus.png' width='250'>
+
 # APADANA: Empowering Smart Connectivity
 
 Welcome to APADANA, your gateway to a smarter, more connected world. At APADANA, we believe in harnessing the power of the Internet of Things (IoT) to revolutionize how we interact with our environments.
