@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useRef} from "react";
 import {connect} from 'react-redux';
 import {getTabs, getTiles, getTileData, getTileGaugeData, getTileGraphData} from "../../services/api";
 import Tabs from "../../components/Dashboard/Tabs";
@@ -9,9 +9,10 @@ import {
 } from '../../redux/constrants/actionTypes';
 import {isMobile} from "react-device-detect";
 
-let ws;
+
 let timerTiles;
-let refreshTime = 1000 * 60 * 2;
+const refreshTime = 1000 * 60 * 2; // 2 minutes
+
 const Dashboard = ({setTilesData, setTileData, addTile, resetGraph, addGraph, updateGraph}) => {
 
     const [tabs, setTabs] = useState([]);
@@ -21,6 +22,11 @@ const Dashboard = ({setTilesData, setTileData, addTile, resetGraph, addGraph, up
     const [layouts, setLayouts] = useState({});
     const [prevLayouts, setPrevLayouts] = useState({});
     const [location, setLocation] = useState(null);
+
+    const ws = useRef(null); // Use a ref to persist the WebSocket instance
+    const reconnectAttempts = useRef(0); // Track reconnection attempts
+    const maxReconnectAttempts = 5; // Maximum number of reconnection attempts
+    const reconnectDelay = useRef(1000); // Initial reconnect delay (1 second)
 
     useEffect(() => {
         timerTiles = setInterval(() => {
@@ -35,53 +41,79 @@ const Dashboard = ({setTilesData, setTileData, addTile, resetGraph, addGraph, up
         }, refreshTime)
     }, [tiles])
 
-    useEffect(() => {
 
-        loadTabs()
+    // Function to establish WebSocket connection
+    const connectWebSocket = () => {
+        ws.current = new WebSocket(`ws://127.0.0.1/ws/monitoring/${localStorage.getItem('token')}/`);
+        ws.current.onopen = () => {
+            console.log("WebSocket connected");
+            reconnectAttempts.current = 0; // Reset reconnection attempts on successful connection
+            reconnectDelay.current = 1000; // Reset reconnect delay
 
-        ws = new WebSocket(`ws://127.0.0.1/ws/monitoring/${localStorage.getItem('token')}/`);
-        ws.onopen = () => {
-            ws.addEventListener('message', function (event) {
-                const data = JSON.parse(event.data)
-                if (data?.id) {
-                    setTileData(data);
-                    // switch (data?.tile) {
-                    // case 'get_tiles':
-                    //     setTilesData(data.response)
-                    //     break;
-                    // case 'get_data':
-                    //     setTileData(data.response)
-                    //     break;
-                    // case 'get_tile':
-                    //     addTile(data.response)
-                    //     break;
-                    // default:
-                    //     break;
-                    // }
-                }
-            });
+            // Send the selected tab ID to the WebSocket
+            if (selectedTab?.id) {
+                ws.current.send(JSON.stringify({ tab_id: selectedTab.id }));
+            }
         };
 
+        ws.current.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            if (data?.id) {
+                setTileData(data); // Update tile data in Redux
+            }
+        };
+
+        ws.current.onerror = (error) => {
+            console.error("WebSocket error:", error);
+            ws.current.close(); // Close the WebSocket on error
+        };
+
+        ws.current.onclose = () => {
+            console.log("WebSocket disconnected");
+            if (reconnectAttempts.current < maxReconnectAttempts) {
+                // Attempt to reconnect with exponential backoff
+                setTimeout(() => {
+                    reconnectAttempts.current += 1;
+                    reconnectDelay.current *= 2; // Double the delay
+                    console.log(`Reconnecting... Attempt ${reconnectAttempts.current}`);
+                    connectWebSocket();
+                }, reconnectDelay.current);
+            } else {
+                console.error("Max reconnection attempts reached. Please refresh the page.");
+            }
+        };
+    };
+
+    // Initialize WebSocket connection on component mount
+    useEffect(() => {
+        loadTabs()
+        connectWebSocket();
+
+        // Cleanup WebSocket and timer on component unmount
         return () => {
-            ws.close()
-            clearTimeout(timerTiles);
-        }
+            if (ws.current) {
+                ws.current.close();
+            }
+            clearInterval(timerTiles);
+        };
     }, []);
 
+    
+    // Load tiles when selectedTab changes
     useEffect(() => {
         if (selectedTab?.id) {
-            resetGraph()
-            setLocation(selectedTab?.location ? selectedTab?.location : null)
             loadTiles();
-            setTimeout(() => {
-                if (ws.readyState === 1) {
-                    ws.send(JSON.stringify({
-                        "tab_id": selectedTab?.id
-                    }));
-                }
-            },2000)
         }
     }, [selectedTab]);
+
+
+    // Send selected tab ID to WebSocket when tab changes
+    useEffect(() => {
+        if (selectedTab?.id && ws.current?.readyState === WebSocket.OPEN) {
+            ws.current.send(JSON.stringify({ tab_id: selectedTab.id }));
+        }
+    }, [selectedTab]);
+
 
     useEffect(() => {
         resetGraph()

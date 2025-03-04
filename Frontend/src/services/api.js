@@ -13,39 +13,13 @@ import {mergedFilterOrder, mergedFilterOrderWithURL} from '../utils/util';
 const version = 'v1';
 let client_token, auth_token;
 const mode = process.env.NODE_ENV;
-const API_URL = process.env.API_URL || "http://127.0.0.1:8080/api/";
+const API_URL = process.env.REACT_APP_API_URL || "http://127.0.0.1/api/";
 
 const CancelToken = axios.CancelToken;
 
 let cancel;
 
 auth_token = localStorage.getItem("token");
-
-// if (mode === "development") {
-//   API_URL = `http://api.${window.location.host}/hosting/${version}/`;
-//   client_token = getCookie("client-token");
-//   auth_token = getCookie("auth-token");
-// }
-
-// if (mode === "local") {
-//   API_URL = `http://api.mizboon.local/hosting/${version}/`;
-//   // client_token = '5be16be30ca2e';
-//   // auth_token = 'f3737099e490beac86c5aed6483f1159c785ed8dbd0ac1ee1616089672a38f52';
-//   client_token = getCookie("client-token");
-//   auth_token = getCookie("auth-token");
-// }
-
-// if (mode === "test") {
-//   API_URL = `https://api.nama.mizbun.com/hosting/${version}/`;
-//   client_token = getCookie("client-token");
-//   auth_token = getCookie("auth-token");
-// }
-
-// if (mode === "production") {
-//   API_URL = `https://api.mizboon.com/hosting/${version}/`;
-//   client_token = getCookie("client-token");
-//   auth_token = getCookie("auth-token");
-// }
 
 axiosRetry(axios, {retries: 2});
 axiosRetry(axios, {retryDelay: axiosRetry.exponentialDelay});
@@ -69,26 +43,12 @@ client.defaults.headers.common['Content-Type'] = 'application/json';
 client.defaults.headers.common['Authorization'] = "Bearer " + auth_token;
 
 axios.interceptors.response.use(
-    response => {
-        // if (response && response.data && response.data.notices && response.data.notices.length > 0) {
-        //   store.dispatch({ type: MESSAGES_ADDED, messages: response.data.notices });
-        // }
-        if (response.status === 400) {
-
-        }
-        return response;
-    },
-    error => {
-        handleError(error);
-        // if (error.response.status === 401) {
-        //   store.dispatch(authLogout())
-        // }
-        // if (error?.response?.status !== 400 && error?.response?.data?.success) {
-        return Promise.reject(error);
-        // }
-    });
-
-
+    (response) => response,
+    (error) => {
+      handleError(error);
+      return Promise.reject(error);
+    }
+  );
 
 
 function getCookie(cname) {
@@ -109,39 +69,34 @@ function getCookie(cname) {
 
 function handleError(error) {
     if (error?.response) {
-        const {status} = error.response;
-        const {data} = error.response;
-        if (status === 401) {
-            removeToken();
-            // window.location.href = window.location.href.split("/Panel")[0] + "/login";
-        } else if (status === 403) { // forbidden
-            // window.location.href = window.location.href.split("/Panel")[0] + "/login";
-            if (!data?.success && data?.message) {
-                alert.show(data.message, {type: 'error'});
-            }
-        } else if (status === 404) { // not found
-
-        } else if (status === 400) { // server error
-            if (!data?.success && data?.message) {
-                // email: ["user with this email already exists."]
-                // last_name: ["This field is required."]
-                // name: ["This field is required."]
-                // password: ["Ensure this field has at least 8 characters."]
-                // phone: ["Ensure this field has at least 11 characters."]
-                // username: ["user with this username already exists."]
-                alert.show(data.message, {type: 'error'});
-            } else {
-                // alert.show('خطایی رخ داد! لطفا دوباره امتحان کنید.', { type: 'error' });
-            }
-        } else if (status === 500) {
-            alert.show("خطایی در سرور رخ داده است، لطفا مجددا امتحان کنید.", {type: 'error'});
-        } else if (status === 502) {
-            alert.show("خطایی در سرور رخ داده است، لطفا مجددا امتحان کنید.", {type: 'error'});
-        } else if (status === 423) {
-            alert.show("تعداد دفعات ارسال درخواست در بازه زمانی بیش از حد مجاز است، لطفا یک دقیقه صبر کنید.", {type: 'error'});
-        }
+        const { status, data } = error.response;
+        switch (status) {
+            case 401:
+              removeToken();
+              window.location.href = "/login"; // Redirect to login
+              break;
+            case 403:
+              alert.show(data.message || "Forbidden: You don't have permission to access this resource.", { type: 'error' });
+              break;
+            case 404:
+              alert.show("Resource not found.", { type: 'error' });
+              break;
+            case 400:
+              alert.show(data.message || "Bad request. Please check your input.", { type: 'error' });
+              break;
+            case 500:
+              alert.show("Server error. Please try again later.", { type: 'error' });
+              break;
+            default:
+              alert.show("An unexpected error occurred.", { type: 'error' });
+          }
+    } else if (error.request) {
+        alert.show("Network error. Please check your connection.", { type: 'error' });
+    } else {
+        alert.show("An unexpected error occurred.", { type: 'error' });
     }
 }
+
 export function setToken(token) {
     localStorage.setItem("token", token);
     axios.defaults.headers.common['Authorization'] = "Bearer " + token;

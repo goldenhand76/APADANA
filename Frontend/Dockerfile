@@ -19,4 +19,8 @@ RUN npm run build
 
 FROM nginx:latest
 COPY --from=build /app/frontend/dist /usr/share/nginx/html
+# Move the default conf out of the way
+RUN mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.orig
+# Copy in new nginx conf
+COPY ./nginx/nginx.conf /etc/nginx/
 CMD ["nginx", "-g", "daemon off;"]

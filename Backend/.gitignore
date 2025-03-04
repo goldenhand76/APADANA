@@ -3,3 +3,15 @@
 /Frontend/
 /static/
 /nginx/Frontend/
+/logs/
+/Angizeh_2/__pycache__/
+/accounting/__pycache__/
+/authentication/__pycache__/
+/automation/__pycache__/
+/condition/__pycache__/
+/activity/__pycache__/
+/device/__pycache__/
+/history/__pycache__/
+/monitoring/__pycache__/
+/notifications/__pycache__/
+/settings/__pycache__/

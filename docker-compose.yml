@@ -36,6 +36,8 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./Backend/Angizeh_2/.env.dev
+    ports:
+      - "5432:5432"
 
   influxdb:
     image: influxdb:2.1-alpine
@@ -66,9 +68,10 @@ services:
     container_name: frontend
     volumes:
       - static:/usr/src/app/static
-      - ./Frontend/nginx:/etc/nginx/conf.d
+      - media:/usr/src/app/media
+      - ./Frontend/nginx/conf.d:/etc/nginx/conf.d
     ports:
-      - "8080:80"
+      - "80:80"
     depends_on:
       - backend
     env_file:

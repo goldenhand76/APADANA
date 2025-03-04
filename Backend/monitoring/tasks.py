@@ -18,10 +18,6 @@ pint_pandas.PintType.ureg = ureg
 
 #==================
 
-
-
-
-
 ureg.Unit.default_format = "~P"
 pint_pandas.PintType.ureg.default_format = "~P"
 
@@ -31,8 +27,9 @@ def influx_gauge_query(tile, topic):
     client = influx_client.connection()
     if len(topic.split("/")) == 6:
         owner, gate, node, type = re.findall("/angizeh/(.*)/(.*)/(.*)/(.*)", topic)[0]
+        host = "IoT"
         query = f"""
-            from(bucket:"mqtt.angizehco.com")\n
+            from(bucket:"{host}")\n
               |> range(start: -1h)
               |> filter(fn: (r) => r["_measurement"] == "{type}")
               |> filter(fn: (r) => r["owner"] == "{owner}")
@@ -43,8 +40,9 @@ def influx_gauge_query(tile, topic):
             """
     elif len(topic.split("/")) == 5:
         part_no, gate, type = re.findall("/angizeh/(.*)/(.*)/(.*)", topic)[0]
+        host = "IoT"
         query = f"""
-            from(bucket:"mqtt.angizehco.com")\n
+            from(bucket:"{host}")\n
               |> range(start: -1h)
               |> filter(fn: (r) => r["_measurement"] == "{type}")
               |> filter(fn: (r) => r["part_number"] == "{part_no}")
@@ -107,10 +105,12 @@ def influx_graph_query(tile, topic):
         """
     else:
         return []
-
-    bucket = """import "timezone"\n
+    
+    host = "IoT"
+    bucket = f"""import "timezone"\n
          option location = timezone.location(name: "Asia/Tehran")\n
-         from(bucket:"mqtt.angizehco.com")\n"""
+         from(bucket:"{host}")\n"""
+    
     # Set time range in influx query
     range_dict = {
         '5m': f"""  |> range(start: -5m)""",
@@ -161,11 +161,12 @@ def influx_query(tile, topic):
     # Get parameters from topic and create query
     client = influx_client.connection()
     owner, gate, node, type = re.findall("/angizeh/(.*)/(.*)/(.*)/(.*)", topic)[0]
-    bucket = """from(bucket:"mqtt.angizehco.com")\n"""
+    host = "IoT"
+    bucket = f"""from(bucket:"{host}")\n"""
 
     if tile.type == "Gauge":
         query = f"""
-        from(bucket:"mqtt.angizehco.com")\n
+        from(bucket:"{host}")\n
           |> range(start: -1h)
           |> filter(fn: (r) => r["_measurement"] == "{type}")
           |> filter(fn: (r) => r["owner"] == "{owner}")

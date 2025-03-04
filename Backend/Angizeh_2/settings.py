@@ -22,7 +22,7 @@ env = environ.Env(DEBUG=(bool, True))
 BASE_DIR = Path(__file__).resolve().parent.parent
 ENV_DIR = Path(__file__).resolve().parent
 
-if str(BASE_DIR) == "C:\\Users\\rezaz\\PycharmProjects\\Angizeh_2":
+if str(BASE_DIR) == "G:\\PycharmProjects\\Angizeh_2\\Backend":
     environ.Env.read_env(os.path.join(ENV_DIR, '.env'))
     print("Development Environment")
 elif str(BASE_DIR) == "/var/www/Angizeh_2":
@@ -38,7 +38,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = env("DJANGO_ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "0.0.0.0"]# env("DJANGO_ALLOWED_HOSTS").split(" ")
 
 # Add to project/settings.py
 # SECURE_HSTS_SECONDS = 30  # Unit is seconds; *USE A SMALL VALUE FOR TESTING!*
@@ -167,12 +167,15 @@ DATABASES = {
 }
 
 # Influx DB config
-INFLUXDB_HOST = 'localhost'
-INFLUXDB_PORT = 8086
+INFLUXDB_HOST = env('INFLUXDB_HOST')
+INFLUXDB_PORT = env('INFLUXDB_PORT')
 INFLUXDB_USERNAME = 'leo'
 INFLUXDB_PASSWORD = 'Goldenhand76'
 INFLUXDB_DATABASE = 'ANGIZEH'
 INFLUXDB_TIMEOUT = 30
+INFLUXDB_TOKEN = env('INFLUXDB_TOKEN')
+INFLUXDB_ORG = env('INFLUXDB_ORG')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -205,10 +208,15 @@ USE_L10N = True
 
 USE_TZ = True
 
-CSRF_TRUSTED_ORIGINS = ['https://viranique.com', 'http://localhost:7000', 'http://localhost']
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://localhost:7000',
+    'http://127.0.0.1:8080',
+    'http://localhost:8080']
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = (
+    "http://127.0.0.1:8000",
     "http://localhost:3000",
     "http://127.0.0.1:8080",
     "https://localhost:3000",

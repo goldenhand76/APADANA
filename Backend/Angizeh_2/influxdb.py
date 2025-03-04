@@ -1,15 +1,19 @@
 from influxdb_client import InfluxDBClient
-import logging
+from influxdb_client.client.warnings import MissingPivotFunction
+import warnings
 
+import logging
+from django.conf import settings
 
 class InfluxClient:
     def __init__(self):
         self.client = InfluxDBClient(
-            url='http://mqtt.angizehco.com:8086',
-            token='BrsUiyZJgaQM2obrWj4kH4roMRaJq15k8rojtrjfkPNei0c6L5GZw9tjylwv660e8R5c3-JU8lEaAW3FHSQJtQ==',
-            org='angizeh',
+            url=settings.INFLUXDB_HOST,
+            token=settings.INFLUXDB_TOKEN,
+            org=settings.INFLUXDB_ORG,
             timeout=30_000
         )
+        warnings.simplefilter("ignore", MissingPivotFunction)
 
     def connection(self):
         if self.client.ping():
